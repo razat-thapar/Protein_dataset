@@ -1,0 +1,19 @@
+About:
+mutliprocessing.py  is the main file that runs the final.py script on all the cores of the machine and then merge the result obtained in form of csv file to a single csv file.
+
+It uses threading library in python which creates threads for each of the task(here the task is to run the final.py script). 
+commands:
+ t = threading.Thread(target=executeModel , args=(cmd,))
+#this creates a thread for task executeModel
+
+t.start()
+#starts the thread
+
+Final.py contains the whole logic of the program
+It can be broadliy divided into following steps
+1.open the csv file to be written 
+2.calculate the targets i.e rmsd ,tm_score,gdt_score using native.pdb and model.pdb file
+3.Now calculate the features of the model.pdb file using functions defined in pydpi library
+4.write all the features in the csv file
+
+*the end*
